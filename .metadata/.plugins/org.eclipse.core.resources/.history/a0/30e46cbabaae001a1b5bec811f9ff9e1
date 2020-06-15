@@ -1,0 +1,27 @@
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.example.demo.service.TestServive;
+
+@SpringBootApplication
+public class MavenSpringBootApplication implements CommandLineRunner{
+
+	@Autowired
+	private TestServive testservive;
+	
+	
+	public static void main(String[] args) {
+		SpringApplication.run(MavenSpringBootApplication.class, args);
+	}
+	
+	@Override
+	public void run(String...  args) throws Exception {
+		testservive.print();
+		testservive.print();
+	}
+
+}
